@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookForm from '../../components/BookForm';
 import BookList from '../../components/BookList';
 import { AuthContext } from '../../contexts/AuthContext';
 import BookContextProvider from '../../contexts/BookContext';
@@ -23,6 +24,7 @@ class login extends Component {
       <div>
         <BookContextProvider>
           <BookList />
+          <BookForm />
         </BookContextProvider>
         {login}
       </div>

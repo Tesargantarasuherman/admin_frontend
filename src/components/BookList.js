@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development';
 import { BookContext } from '../contexts/BookContext';
+import BookDetails from './BookDetails';
 
 function BookList() {
     const {books} = useContext(BookContext)
@@ -8,7 +9,7 @@ function BookList() {
     <ul>
         {books.map(book=>{
             return(
-                <li>{book.title}</li>
+                <BookDetails book={book} key={book.id} />
             )
         })
         }
