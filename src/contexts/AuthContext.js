@@ -6,9 +6,12 @@ class AuthContextProvider extends Component {
     state = { 
         isLogin:false,
      } 
+     toggleAuth =()=>{
+         this.setState({isLogin :!this.state.isLogin})
+     }
     render() { 
         return (
-            <AuthContext.Provider value={{...this.state}}>
+            <AuthContext.Provider value={{...this.state, toggleAuth:this.toggleAuth}}>
                 {/* asign children to another component */}
                 {this.props.children}
             </AuthContext.Provider>
