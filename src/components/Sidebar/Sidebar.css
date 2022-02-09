@@ -2,6 +2,7 @@
     background-color: #1e272e;
     color:white;
     flex:1;
+    min-height: 100vh;
 }
 .body-sidebar>ul>li{
     list-style: none;
