@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import BookContextProvider from '../../contexts/BookContext';
 import './index.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import Logo from '../../img/logo.png'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -34,7 +34,24 @@ const login = () => {
         <div className="login-right-side">
           {/* <BookList />
           <BookForm /> */}
-
+          <div className="form-login">
+            <img src={Logo} alt="" className="logo" width={100} />
+            <p className="title-login">Hello Again</p>
+            <p className="label-login">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tempora omnis ea!</p>
+            <div className="container-input-login">
+              <input type="text" name="" id="" className='input-form' placeholder='Email' />
+              <i>
+                <ion-icon name="at-circle"></ion-icon>
+              </i>
+            </div>
+            <div className="container-input-login">
+              <input type="text" name="" id="" className='input-form' placeholder='Password' />
+              <i>
+                <ion-icon name="key"></ion-icon>
+              </i>
+            </div>
+            <button className="btn-login">Login</button>
+          </div>
         </div>
       </div>
     </BookContextProvider>
