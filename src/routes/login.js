@@ -6,7 +6,7 @@ const user = [
     {
         path: `${root}/`,
         component: <Login/>,
-        navbar: true,
+        navbar: false,
         sidebar: false,
     },
 ];

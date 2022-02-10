@@ -6,7 +6,6 @@ import BookContextProvider from "./contexts/BookContext";
 import ThemeContextProvider, { ThemeContext } from "./contexts/ThemeContext";
 import Main from "./routes/Main";
 
-
 function App() {
   return (
     <AuthContextProvider>

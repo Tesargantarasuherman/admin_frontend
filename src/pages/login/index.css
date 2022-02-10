@@ -1,0 +1,19 @@
+.login {
+  margin: 80px auto;
+  background-color: #eeee;
+  width: 60%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+}
+.login-left-side {
+  background-color: red;
+  flex:1;
+}
+.login-left-side {
+    max-width: 500px !important;
+    overflow: hidden;
+}
+.login-right-side {
+  flex:1;
+}
