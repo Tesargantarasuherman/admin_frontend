@@ -7,21 +7,27 @@
   flex: 1;
   background-color: #d43e2a !important;
   text-align: center;
+  color:white;
 }
 .nav > div:nth-child(2) {
-  flex: 4;
+  flex: 5;
 }
-.right-nav{
-    margin:0px 20px ;
-    background-color: #d43e2a !important;
-    height: 40pt;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    border-radius: 5px;
+.right-nav {
+  padding: 0px 20px;
+  margin: 0px 20px;
+  background-color: #d43e2a !important;
+  height: 40pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
 }
-.right-nav>img{
-    margin-right: 20px;
-    border:solid white  1px;
-    border-radius: 50%;
+.right-nav > i {
+  font-size: 24pt;
+  cursor: pointer;
+  color:white;
+}
+.right-nav > img {
+  border: solid white 1px;
+  border-radius: 50%;
 }

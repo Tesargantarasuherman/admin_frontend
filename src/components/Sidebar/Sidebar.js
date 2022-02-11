@@ -1,23 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../Sidebar/Sidebar.css';
+import { NavContext } from '../../contexts/NavContext';
 function Sidebar() {
+  const { isNav, none, visible } = useContext(NavContext)
+  const nav = isNav ? visible : none;
   return (
-    <div className='body-sidebar'>
+    <div className='body-sidebar' style={{ display: nav.css }}>
       <div>
         <i>
-          <ion-icon name="desktop"></ion-icon>
+          <ion-icon name="speedometer"></ion-icon>
         </i>
         <p>lorem</p>
       </div>
-      <ul>
-        <li>
-          <i><ion-icon name="desktop"></ion-icon></i>
-          Lorem
-        </li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-      </ul>
     </div>
   )
 }
