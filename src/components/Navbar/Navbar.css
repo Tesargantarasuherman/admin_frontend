@@ -1,0 +1,27 @@
+.nav {
+  height: 40pt;
+  display: flex;
+  justify-content: space-between;
+}
+.nav > div:nth-child(1) {
+  flex: 1;
+  background-color: #d43e2a !important;
+  text-align: center;
+}
+.nav > div:nth-child(2) {
+  flex: 4;
+}
+.right-nav{
+    margin:0px 20px ;
+    background-color: #d43e2a !important;
+    height: 40pt;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-radius: 5px;
+}
+.right-nav>img{
+    margin-right: 20px;
+    border:solid white  1px;
+    border-radius: 50%;
+}

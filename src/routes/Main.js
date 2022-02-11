@@ -2,7 +2,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routes from "../routes/index";
-import Navbar from "../components/Navbar.js";
+import Navbar from "../components/Navbar/Navbar.js";
 import Sidebar from '../components/Sidebar/Sidebar';
 
 function Main(props) {
@@ -14,7 +14,6 @@ function Main(props) {
         <>
             {/* Navbar ----------------------------- */}
             <Routes>
-
                 {routes.map((route) => {
                     if (route.navbar)
                         return <Route path={route.path} element={<Navbar Logout={props.Logout} handleClick={props.handleClick} theme={props.theme} setThemeAction={props.setThemeAction} />
@@ -25,20 +24,22 @@ function Main(props) {
             {/* ---------------------------------- */}
             {/* Render Sidebar */}
             <div style={main}>
-                <Routes>
-                    {routes.map((route) => {
-                        if (route.sidebar)
-                            return <Route path={route.path} element={<Sidebar />} />;
-                    })}
-                </Routes>
+                    <Routes>
+                        {routes.map((route) => {
+                            if (route.sidebar)
+                                return <Route path={route.path} element={<Sidebar />} />;
+                        })}
+                    </Routes>
 
                 {/* Render Page */}
-                <div style={{flex:4}}>
+                <div style={{ flex: 4 }}>
+                <div style={{margin:'20px'}}>
                     <Routes>
                         {routes.map((route) => {
                             return <Route path={route.path} element={route.component} />
                         })}
                     </Routes>
+                </div>
                 </div>
             </div>
         </>

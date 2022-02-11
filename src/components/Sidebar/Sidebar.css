@@ -1,10 +1,21 @@
 .body-sidebar{
-    background-color: #1e272e;
+    background-color:  #d43e2a !important;
     color:white;
-    flex:1;
     min-height: 100vh;
+    flex:1;
+}
+.body-sidebar>div{
+    display: flex;
+    align-items: center;
+}
+.body-sidebar>div>i{
+    font-size : 30px;
 }
 .body-sidebar>ul>li{
     list-style: none;
-    font-size:16px;
+    margin:10px 0px;
+}
+.body-sidebar>ul>li>i{
+    font-size:30px;
+
 }
