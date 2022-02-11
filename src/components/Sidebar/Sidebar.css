@@ -4,27 +4,22 @@
     min-height: 100vh;
     flex:1;
 }
-.body-sidebar>div{
+.body-sidebar>.list-sidebar{
     display: flex;
     align-items: center;
-    color:#d43e2a  ;
-    margin-left:20px;
-    background-color: white;
+    margin:10px 0px 10px 20px;
+    color: white;
     padding:10px;
     border-radius: 30px 0px 0px 30px;
 }
-.body-sidebar>div>i{
+.body-sidebar>.list-sidebar>i{
     font-size : 24px;
     padding:0px 10px;
 }
-.body-sidebar>div>p{
+.body-sidebar>.list-sidebar>p{
     font-size : 16px;
 }
-.body-sidebar>ul>li{
-    list-style: none;
-    margin:10px 0px;
-}
-.body-sidebar>ul>li>i{
-    font-size:30px;
-
+.body-sidebar>.list-sidebar.active{
+    background-color: white;
+    color:#d43e2a  ;
 }
