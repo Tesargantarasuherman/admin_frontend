@@ -1,15 +1,9 @@
 import Dashboard from "../pages/dashboard";
 import UserManagement from "../pages/userManagement/index";
 
-const root = "/dashboard";
+const root = "";
 
-const user = [
-    {
-        path: `${root}/`,
-        component: <Dashboard/>,
-        navbar: true,
-        sidebar: true,
-    },
+const usermanagement = [
     {
         path: `${root}/user`,
         component: <UserManagement/>,
@@ -18,4 +12,4 @@ const user = [
     },
 ];
 
-export default user;
+export default usermanagement;

@@ -24,22 +24,22 @@ function Main(props) {
             {/* ---------------------------------- */}
             {/* Render Sidebar */}
             <div style={main}>
-                    <Routes>
-                        {routes.map((route) => {
-                            if (route.sidebar)
-                                return <Route path={route.path} element={<Sidebar />} />;
-                        })}
-                    </Routes>
+                <Routes>
+                    {routes.map((route) => {
+                        if (route.sidebar)
+                            return <Route path={route.path} element={<Sidebar />} />;
+                    })}
+                </Routes>
 
                 {/* Render Page */}
                 <div style={{ flex: 5 }}>
-                <div style={{margin:'20px'}}>
-                    <Routes>
-                        {routes.map((route) => {
-                            return <Route path={route.path} element={route.component} />
-                        })}
-                    </Routes>
-                </div>
+                    <div style={{ margin: '20px' }}>
+                        <Routes>
+                            {routes.map((route) => {
+                                return <Route path={route.path} element={route.component} />
+                            })}
+                        </Routes>
+                    </div>
                 </div>
             </div>
         </>

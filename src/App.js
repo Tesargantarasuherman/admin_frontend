@@ -9,17 +9,17 @@ import Main from "./routes/Main";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <ThemeContextProvider>
-        <BookContextProvider>
-          <NavContextProvider>
-          <BrowserRouter>
-            <Main />
-          </BrowserRouter>
-          </NavContextProvider>
-        </BookContextProvider>
-      </ThemeContextProvider>
-    </AuthContextProvider>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <ThemeContextProvider>
+          <BookContextProvider>
+            <NavContextProvider>
+              <Main />
+            </NavContextProvider>
+          </BookContextProvider>
+        </ThemeContextProvider>
+      </AuthContextProvider>
+    </BrowserRouter>
   );
 }
 
