@@ -3,7 +3,6 @@ import '../Sidebar/Sidebar.css';
 import { NavContext } from '../../contexts/NavContext';
 import data_sidebar from '../../localdata/sidebar';
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 function Sidebar() {
   const navigate = useNavigate();
