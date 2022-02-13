@@ -20,7 +20,7 @@ function Sidebar() {
       {
         sidebar.map(sidebar => {
           return (
-            <div className={`list-sidebar ${active == sidebar.name ? 'active' : ''}`} onClick={()=>actionSetActive(sidebar)}>
+            <div className={`list-sidebar ${active == sidebar.name ? 'active' : ''}`} onClick={() => actionSetActive(sidebar)}>
               <i>
                 {sidebar.icon}
               </i>
