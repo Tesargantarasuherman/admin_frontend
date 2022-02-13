@@ -1,0 +1,16 @@
+.body-dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+.left-dashboard {
+  flex: 4;
+  margin-right: 10px;
+}
+.left-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.right-dashboard {
+  flex: 1;
+}
