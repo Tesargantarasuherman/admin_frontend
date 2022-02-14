@@ -4,7 +4,7 @@ const root = "/";
 
 const user = [
     {
-        path: `${root}/`,
+        path: `${root}`,
         component: <Login/>,
         navbar: false,
         sidebar: false,

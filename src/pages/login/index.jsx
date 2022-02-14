@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import BookForm from '../../components/BookForm';
 import BookList from '../../components/BookList';
-import { AuthContext } from '../../contexts/AuthContext';
 import BookContextProvider from '../../contexts/BookContext';
 import './index.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,10 +9,21 @@ import Logo from '../../img/logo.png'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-const login = () => {
+import AuthContextProvider, { AuthContext } from '../../contexts/AuthContext';
 
+function Login() {
+  const { postLogin } = useContext(AuthContext)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    postLogin({ email: email, password: password })
+    setEmail('')
+    setPassword('')
+  }
   return (
-    <BookContextProvider>
+    <AuthContextProvider>
       <div className="login">
         <div className="login-left-side">
           <Swiper
@@ -38,25 +48,27 @@ const login = () => {
             <img src={Logo} alt="" className="logo" width={100} />
             <p className="title-login">Hello Again</p>
             <p className="label-login">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tempora omnis ea!</p>
-            <div className="container-input-login">
-              <input type="text" name="" id="" className='input-form' placeholder='Email' />
-              <i>
-                <ion-icon name="at-circle"></ion-icon>
-              </i>
-            </div>
-            <div className="container-input-login">
-              <input type="text" name="" id="" className='input-form' placeholder='Password' />
-              <i>
-                <ion-icon name="key"></ion-icon>
-              </i>
-            </div>
-            <button className="btn-login">Login</button>
+            <form action="" onSubmit={handleSubmit}>
+              <div className="container-input-login">
+                <input type="text" name="" id="" className='input-form' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <i>
+                  <ion-icon name="at-circle"></ion-icon>
+                </i>
+              </div>
+              <div className="container-input-login">
+                <input type="text" name="" id="" className='input-form' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <i>
+                  <ion-icon name="key"></ion-icon>
+                </i>
+              </div>
+              <button type="submit" className="btn-login">Login</button>
+            </form>
           </div>
         </div>
       </div>
-    </BookContextProvider>
+    </AuthContextProvider>
   );
 }
 
 
-export default login;
+export default Login;
