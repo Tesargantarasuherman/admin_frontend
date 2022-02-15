@@ -3,6 +3,7 @@
   color: #f1f2f6;
   min-height: 100vh;
   flex: 1;
+  padding-top: 60px;
 }
 .body-sidebar > .list-sidebar {
   display: flex;
@@ -12,7 +13,8 @@
   padding: 10px;
   border-radius: 30px 0px 0px 30px;
   cursor: pointer;
-  transition: 500ms;
+  transition: 100ms;
+  position: relative;
 }
 .body-sidebar > .list-sidebar:hover {
   display: flex;
@@ -23,12 +25,60 @@
   padding: 10px;
   border-radius: 30px 0px 0px 30px;
   cursor: pointer;
-  transition: 500ms;
+}
+.body-sidebar > .list-sidebar:hover {
+  display: flex;
+  align-items: center;
+  background-color: #f1f2f6;
+  color: #d43e2a;
+  margin: 10px 0px 10px 20px;
+  padding: 10px;
+  border-radius: 30px 0px 0px 30px;
+  cursor: pointer;
 }
 .body-sidebar > .list-sidebar.active::before {
-  background-color: #d43e2a;
-  bottom: -100px;
-  left: -20px;
+  background: transparent;
+  top:-40px;
+  width:40px;
+  right:-2px;
+  height: 40px;
+  position: absolute;
+  content:'';
+  border-radius: 50%;
+  box-shadow: 30px 30px 0 10px #f1f2f6;
+}
+.body-sidebar > .list-sidebar.active::after {
+  background: transparent;
+  bottom:-40px;
+  width:40px;
+  right:-2px;
+  height: 40px;
+  position: absolute;
+  content:'';
+  border-radius: 50%;
+  box-shadow: 30px -35px 0 10px #f1f2f6;
+}
+.body-sidebar > .list-sidebar:hover::before {
+  background: transparent;
+  top:-40px;
+  width:40px;
+  right:-2px;
+  height: 40px;
+  position: absolute;
+  content:'';
+  border-radius: 50%;
+  box-shadow: 30px 30px 0 10px #f1f2f6;
+}
+.body-sidebar > .list-sidebar:hover::after {
+  background: transparent;
+  bottom:-40px;
+  width:40px;
+  right:-2px;
+  height: 40px;
+  position: absolute;
+  content:'';
+  border-radius: 50%;
+  box-shadow: 30px -35px 0 10px #f1f2f6;
 }
 .body-sidebar > .list-sidebar > i {
   font-size: 24px;

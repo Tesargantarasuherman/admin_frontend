@@ -33,7 +33,7 @@ function Main(props) {
 
                 {/* Render Page */}
                 <div style={{ flex: 5 }}>
-                    <div style={{ margin: '20px' }}>
+                    <div style={{ margin: '40px' }}>
                         <Routes>
                             {routes.map((route) => {
                                 return <Route path={route.path} element={route.component} />
