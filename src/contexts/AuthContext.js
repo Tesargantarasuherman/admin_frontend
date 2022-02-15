@@ -4,7 +4,6 @@ import API from '../services/API/Auth';
 
 export const AuthContext = createContext();
 class AuthContextProvider extends Component {
-
     state = {
         isLogin: false,
     }

@@ -15,7 +15,7 @@ function Sidebar() {
     navigate(`/${params.link}`);
   }
   return (
-    <div className='body-sidebar' style={{ display: nav.css }}>
+    <div className='body-sidebar' style={{ display: nav.css,transition:'850ms' }}>
       {
         sidebar.map(sidebar => {
           return (
