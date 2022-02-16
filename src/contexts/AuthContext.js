@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 class AuthContextProvider extends Component {
     state = {
         isLogin: false,
+        dataLogin: localStorage.getItem("data_user"),
     }
     toggleAuth = () => {
         this.setState({ isLogin: !this.state.isLogin })
@@ -17,6 +18,14 @@ class AuthContextProvider extends Component {
         }).catch(err =>
             console.log(err)
         )
+    }
+    componentDidMount = () => {
+        if (this.state.dataLogin) {
+            this.setState({ isLogin: true })
+        }
+        else {
+            this.setState({ isLogin: false })
+        }
     }
     render() {
 
