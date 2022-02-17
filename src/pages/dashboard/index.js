@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
+import Calendar from 'react-calendar';
+
 function Dashboard() {
+  const [value, onChange] = useState(new Date());
+
   return (
     <div className="body-dashboard">
       <div className="left-dashboard">
@@ -10,9 +14,12 @@ function Dashboard() {
             <option value="">This Week</option>
           </select>
         </div>
+        <div className="left-dashboard-body">
+          
+        </div>
       </div>
       <div className='right-dashboard'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet exercitationem maiores aliquam iusto soluta autem sit animi voluptate dignissimos consequatur.
+        <Calendar onChange={onChange} value={value} />
       </div>
     </div>
   )

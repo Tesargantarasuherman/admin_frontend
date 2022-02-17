@@ -7,3 +7,19 @@ body {
   margin: 0;
   padding: 0;
 }
+.react-calendar{
+  border:none !important;
+}
+.react-calendar__tile--now{
+  border-radius: 50px !important;
+}
+.react-calendar__tile--active{
+  border-radius: 50px !important;
+  background-color:#d43e2a !important;
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__prev2-button,.react-calendar__navigation__arrow.react-calendar__navigation__next2-button{
+  background-color: #E6E6E6 !important;
+  color:white !important;
+  border-radius: 50% !important;
+  font-size: 16px;
+}

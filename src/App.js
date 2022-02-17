@@ -9,6 +9,7 @@ import ThemeContextProvider, { ThemeContext } from "./contexts/ThemeContext";
 import Login from "./pages/login";
 import Main from "./routes/Main";
 import MainPage from "./routes/main/MainPage";
+import 'react-calendar/dist/Calendar.css';
 
 function App() {
 
