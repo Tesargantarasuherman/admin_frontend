@@ -1,41 +1,38 @@
-import React, { createContext, Component, useReducer } from 'react'
+import React, { createContext, Component, useReducer, useState,useEffect } from 'react'
 import AuthReducers from '../reducers/AuthReducers';
 import API from '../services/API/Auth';
-
+import {
+    useNavigate
+} from "react-router-dom";
 export const AuthContext = createContext();
-class AuthContextProvider extends Component {
-    state = {
-        isLogin: false,
-        dataLogin: localStorage.getItem("data_user"),
+const AuthContextProvider = (props) => {
+    const [isLogin, setIsLogin] = useState(false);
+    const [dataLogin, setDataLogin] = useState(localStorage.getItem("data_user"));
+    const toggleAuth = () => {
+        setIsLogin(true)
     }
-    toggleAuth = () => {
-        this.setState({ isLogin: !this.state.isLogin })
-    }
-    postLogin = (data) => {
+    const postLogin = (data) => {
         API.Login(data).then(res => {
-            this.setState({ isLogin: true })
+            setIsLogin(true)
             localStorage.setItem("data_user", JSON.stringify(res.data.data));
         }).catch(err =>
             console.log(err)
         )
     }
-    componentDidMount = () => {
-        if (this.state.dataLogin) {
-            this.setState({ isLogin: true })
+    useEffect(() => {
+        if (dataLogin) {
+            setIsLogin(true)
         }
         else {
-            this.setState({ isLogin: false })
+            setIsLogin(false)
         }
-    }
-    render() {
-
-        return (
-            <AuthContext.Provider value={{ ...this.state, toggleAuth: this.toggleAuth, postLogin: this.postLogin }}>
-                {/* asign children to another component */}
-                {this.props.children}
-            </AuthContext.Provider>
-        );
-    }
+    },[])
+    return (
+        <AuthContext.Provider value={{ isLogin:isLogin,toggleAuth: toggleAuth, postLogin: postLogin }}>
+            {/* asign children to another component */}
+            {props.children}
+        </AuthContext.Provider>
+    );
 
 }
 

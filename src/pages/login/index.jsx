@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import BookForm from '../../components/BookForm';
 import BookList from '../../components/BookList';
 import BookContextProvider from '../../contexts/BookContext';
@@ -10,11 +10,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import AuthContextProvider, { AuthContext } from '../../contexts/AuthContext';
+import {
+  useNavigate
+} from "react-router-dom";
 
 function Login() {
   const { postLogin } = useContext(AuthContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [token, setToken] = useState(localStorage.getItem("data_user"))
+  const Navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,6 +27,11 @@ function Login() {
     setEmail('')
     setPassword('')
   }
+  useEffect(() => {
+    if (token) {
+      Navigate('/dashboard')
+    }
+  }, []);
   return (
     <AuthContextProvider>
       <div className="login">
