@@ -112,3 +112,29 @@
   text-align: left;
   background-color: white;
 }
+.last-active-user{
+  margin-top:20px;
+  background-color: #f2f2f2;
+  padding:5px;
+  border-radius: 5px;
+}
+.last-active-user>label{
+  font-weight: bold;
+}
+.card-last-active-user{
+  display: flex;
+  justify-content: space-between;
+  text-align:center;
+  align-items:center;
+  padding:5px;
+  border-radius: 5px;
+}
+.card-last-active-user:nth-child(even) {
+  background-color: white;
+}
+.card-last-active-user>div>img{
+  width:40px;
+}
+.detail-last-active-user{
+  margin-top:10px;
+}

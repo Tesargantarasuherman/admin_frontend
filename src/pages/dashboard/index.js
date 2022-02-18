@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './index.css'
 import Calendar from 'react-calendar';
 import Chart from 'react-apexcharts';
-
+import user from '../../img/user-man.png'
 function Dashboard() {
   const [value, onChange] = useState(new Date());
   const series = [{
@@ -170,7 +170,7 @@ function Dashboard() {
                 <td>20 February 2022</td>
               </tr>
               <tr>
-              <td>Alfreds Futterkiste</td>
+                <td>Alfreds Futterkiste</td>
                 <td>200.000</td>
                 <td>Docker</td>
                 <td>20 February 2022</td>
@@ -181,6 +181,33 @@ function Dashboard() {
       </div>
       <div className='right-dashboard'>
         <Calendar onChange={onChange} value={value} />
+        <div className="last-active-user">
+          <label htmlFor="">Last Active User</label>
+          <div className="detail-last-active-user">
+            <div className="card-last-active-user">
+              <div>
+                <img src={user} alt="" srcset="" />
+              </div>
+              <div>
+                Tesar
+              </div>
+              <div>
+                13:00,20 February 2022
+              </div>
+            </div>
+            <div className="card-last-active-user">
+              <div>
+                <img src={user} alt="" srcset="" />
+              </div>
+              <div>
+                Gantara
+              </div>
+              <div>
+                13:00,20 February 2022
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
